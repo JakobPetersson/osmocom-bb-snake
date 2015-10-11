@@ -83,7 +83,11 @@ position_t mouse;
 direction_t new_dir;
 game_state_t game_state;
 
-/* 
+/*
+ * DEBUG
+ */
+
+/*
 	MENU
 */
 void enter_menu_screen();
@@ -172,12 +176,12 @@ void print_menu_screen() {
 }
 
 /*
-	GAME	GAME	GAME	GAME	GAME	GAME	GAME	GAME	
+	GAME	GAME	GAME	GAME	GAME	GAME	GAME	GAME
 */
 
 void enter_game_screen() {
 	game_state = GAME;
-	
+
 	// Setup keys and screen
 	keypad_set_handler(&game_key_handler);
 	print_game_screen();
@@ -348,13 +352,13 @@ void print_game_part(uint8_t x, uint8_t y, drawtype_t type) {
 		// Only for 3x3
 		fb_gotoxy(xpos+1, ypos);
 		fb_lineto(xpos+1, ypos);
-		
+
 		fb_gotoxy(xpos, ypos+1);
 		fb_lineto(xpos, ypos+1);
-		
+
 		fb_gotoxy(xpos+2, ypos+1);
 		fb_lineto(xpos+2, ypos+1);
-		
+
 		fb_gotoxy(xpos+1, ypos+2);
 		fb_lineto(xpos+1, ypos+2);
 	}
